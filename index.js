@@ -5,7 +5,7 @@ const { initializeApp, cert } = require("firebase-admin/app");
 const { getFirestore } = require("firebase-admin/firestore");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 dotenv.config();
 
