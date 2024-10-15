@@ -3,3 +3,4 @@
 
 # Ignora node_modules (por defecto en la mayoría de los proyectos Node.js)
 node_modules/
+.vercel
