@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors"); // Agrega esto
 const admin = require("firebase-admin");
 const dotenv = require("dotenv");
 const { initializeApp, cert } = require("firebase-admin/app");
@@ -9,6 +10,7 @@ const port = process.env.PORT || 3000;
 
 dotenv.config();
 
+// Configurar CORS para permitir todas las solicitudes
 app.use(cors());
 
 const firebaseConfig = JSON.parse(process.env.FIREBASE_ADMIN_SDK_CONFIG);
@@ -23,7 +25,6 @@ app.get("/", (req, res) => {
   res.send("¡Bienvenido al servidor express!");
 });
 
-// Endpoint básico (GET)
 app.get("/data", async (req, res) => {
   try {
     const snapshot = await db.collection("Departamentos").get();
