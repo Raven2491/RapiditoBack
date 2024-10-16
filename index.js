@@ -9,6 +9,8 @@ const port = process.env.PORT || 3000;
 
 dotenv.config();
 
+app.use(cors());
+
 const firebaseConfig = JSON.parse(process.env.FIREBASE_ADMIN_SDK_CONFIG);
 
 admin.initializeApp({
